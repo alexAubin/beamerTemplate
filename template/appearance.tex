@@ -1,0 +1,76 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%   Parametrage des slides   %%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Background image
+
+%\setbeamertemplate{background}
+%{
+%	\begin{beamercolorbox}[center]{background}
+%	\centering
+%	\begin{center}
+%	\includegraphics[scale=0.15]{img/bg}
+%	}
+%    \end{beamercolorbox}
+%}
+
+% Headline
+
+\setbeamertemplate{headline}
+{
+	\begin{beamercolorbox}[ht=10ex,dp=1ex,center]{section in head/foot}
+	\begin{Large}
+        %\hfill \insertsubsection \hfill
+        \hfill \insertsection \hfill
+	\end{Large}
+	\end{beamercolorbox}
+}
+
+% Footline
+
+\setbeamertemplate{footline}
+{
+    \begin{beamercolorbox}[ht=10ex,dp=1ex,center]{date in head/foot}
+    \begin{tabular}{l c r}
+	%	{} & Mesure de l'accélération de l'expansion de l'Univers et des paramètres cosmologiques & {} \\
+	%	\insertshortdate{} \hspace*{0.3cm} & \hspace*{7cm} & \hspace*{0.3cm} \insertframenumber{} / \inserttotalframenumber\\
+			\hspace*{1.3cm} & \hspace*{7cm} & \hspace*{0.3cm} \insertframenumber{}\\
+	\end{tabular}
+	\vskip0pt
+    \end{beamercolorbox}
+}
+
+
+
+% Outline configuration between the sections
+\AtBeginSection[]{
+
+	% First, ignore this slide in the counting
+	%\ignoreNextCounting
+
+	% Repeat outline + sections + current subsections
+
+%	\slide
+%	{
+%		\tableofcontents[currentsection, hideothersubsections]
+%	}
+
+	% Only print the current section centered on the slide
+	%{
+	%    \setbeamertemplate{headline}{}
+    % 	\setbeamertemplate{footline}{}
+	%	\slideCentered
+	%	{
+	%    	\Large{\insertsection}
+	%	}
+	%}
+}
+
+% Disable the navigation toolbar on the slides
+\beamertemplatenavigationsymbolsempty
+
+% Ball style for list
+\setbeamertemplate{itemize items}[ball]
+\setbeamertemplate{sections/subsections in toc}[ball numbered]

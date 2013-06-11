@@ -1,0 +1,32 @@
+% Starting beamer presentation
+\documentclass{beamer}
+
+% (Dunno what this line is for)
+\usepackage{etex}
+
+% Actually set the format to slides
+\mode<presentation> {
+  \usetheme{default}
+  \setbeamercovered{transparent}
+}
+
+% Img paths
+\graphicspath{{../img/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\input{packages.tex}
+
+	\input{macros.tex}
+
+	\input{appearance.tex}
+
+	\input{../title.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+	\input{../slides.tex}
+
+\end{document}
