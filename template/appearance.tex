@@ -23,7 +23,7 @@
 	\begin{beamercolorbox}[ht=10ex,dp=1ex,center]{section in head/foot}
 	\begin{Large}
         %\hfill \insertsubsection \hfill
-        \hfill \insertsection \hfill
+        \hfill {\usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertsection} \hfill
 	\end{Large}
 	\end{beamercolorbox}
 }
@@ -36,7 +36,7 @@
     \begin{tabular}{l c r}
 	%	{} & Mesure de l'accélération de l'expansion de l'Univers et des paramètres cosmologiques & {} \\
 	%	\insertshortdate{} \hspace*{0.3cm} & \hspace*{7cm} & \hspace*{0.3cm} \insertframenumber{} / \inserttotalframenumber\\
-			\hspace*{1.3cm} & \hspace*{7cm} & \hspace*{0.3cm} \insertframenumber{}\\
+        \hspace*{1.3cm} & \hspace*{7cm} & \hspace*{0.3cm} {\usebeamercolor[fg]{pagenumber}\insertframenumber{}}\\
 	\end{tabular}
 	\vskip0pt
     \end{beamercolorbox}
@@ -72,5 +72,42 @@
 \beamertemplatenavigationsymbolsempty
 
 % Ball style for list
-\setbeamertemplate{itemize items}[ball]
-\setbeamertemplate{sections/subsections in toc}[ball numbered]
+
+
+\definecolor{Grey}{RGB}{50,50,50}
+\definecolor{LightGrey}{RGB}{130,130,130}
+\definecolor{Blue}{RGB}{50,100,240}
+
+\setbeamercolor{title}{fg=Grey}
+\setbeamercolor{frametitle}{fg=Grey}
+
+\setbeamercolor{author}{fg=LightGrey}
+\setbeamercolor{institute}{fg=LightGrey}
+\setbeamercolor{date}{fg=LightGrey}
+\setbeamercolor{pagenumber}{fg=LightGrey}
+
+\setbeamercolor{itemize item}{fg=Blue}
+
+\setbeamerfont{title}{size=\huge}
+\setbeamerfont{frametitle}{size=\huge}
+\setbeamerfont{author}{series=\bfseries}
+
+
+\setbeamertemplate{itemize item}{$\bullet$}
+\setbeamertemplate{sections/subsections in toc}[]
+
+\defbeamertemplate*{title page}{customized}[1][]
+{
+        \begin{center}
+            \usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par
+            \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par
+
+            \bigskip
+
+            \usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\par
+            \usebeamerfont{institute}\usebeamercolor[fg]{institute}\insertinstitute\par
+            \usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate
+        \end{center}
+}
+
+

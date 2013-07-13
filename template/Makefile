@@ -1,10 +1,10 @@
 MAIN = main
 
-TEX = latex
+TEX = xelatex
 
 
 $(MAIN).pdf : $(MAIN).tex ../slides.tex ../title.tex
-	$(TEX) $(MAIN).tex; dvipdf $(MAIN).dvi $(MAIN).pdf; cp $(MAIN).pdf ../slides.pdf
+	$(TEX) $(MAIN).tex; cp $(MAIN).pdf ../slides.pdf
 
 pdf : $(MAIN).pdf
 

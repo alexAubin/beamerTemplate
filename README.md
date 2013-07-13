@@ -3,6 +3,11 @@ Beamer template
 
 Easy slide-making using LaTeX Beamer
 
+Dependencies
+------------
+
+This require the xelatex command installed along with the Gillium Sans font
+
 Usage
 -----
 
@@ -15,7 +20,4 @@ Usage
 Todo list
 ----------
 
-- Option for itemList to add a \textbf{List title} before
 - Display a slide counter (current/total) in the header, w.r.t. the current section
-- Auto-convert jpg/png to eps in the Makefile
-- Try to find a font similar to the Apple powerpoint-equivalent
