@@ -4,7 +4,7 @@ TEX = xelatex
 
 
 $(MAIN).pdf : $(MAIN).tex ../slides.tex ../title.tex
-	$(TEX) $(MAIN).tex; cp $(MAIN).pdf ../slides.pdf
+	$(TEX) -interaction=nonstopmode $(MAIN).tex | grep "\\\.box\|\!\|^l\.\|^  " ; cp $(MAIN).pdf ../slides.pdf
 
 pdf : $(MAIN).pdf
 
