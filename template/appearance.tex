@@ -36,7 +36,7 @@
     \begin{tabular}{l c r}
 	%	{} & Mesure de l'accélération de l'expansion de l'Univers et des paramètres cosmologiques & {} \\
 	%	\insertshortdate{} \hspace*{0.3cm} & \hspace*{7cm} & \hspace*{0.3cm} \insertframenumber{} / \inserttotalframenumber\\
-        \hspace*{1.3cm} & \hspace*{7cm} & \hspace*{0.3cm} {\usebeamercolor[fg]{pagenumber}\insertframenumber{}}\\
+        \hspace*{1.3cm} & \hspace*{7cm} & \hspace*{2cm} {\scriptsize{\usebeamercolor[fg]{pagenumber}\insertframenumber{}}}\\
 	\end{tabular}
 	\vskip0pt
     \end{beamercolorbox}
@@ -74,6 +74,7 @@
 % Ball style for list
 
 
+
 \definecolor{Grey}{RGB}{50,50,50}
 \definecolor{LightGrey}{RGB}{130,130,130}
 \definecolor{Blue}{RGB}{50,100,240}
@@ -84,7 +85,7 @@
 \setbeamercolor{author}{fg=LightGrey}
 \setbeamercolor{institute}{fg=LightGrey}
 \setbeamercolor{date}{fg=LightGrey}
-\setbeamercolor{pagenumber}{fg=LightGrey}
+\setbeamercolor{pagenumber}{fg=Grey}
 
 \setbeamercolor{itemize item}{fg=Blue}
 
@@ -100,6 +101,9 @@
 {
         \begin{center}
             \usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par
+
+            \vspace{0.5cm}
+
             \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par
             \usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate\par
 
