@@ -75,27 +75,23 @@
 % Images management
 %%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\imgw}[2]
-{
-	\includegraphics[width=#1\textwidth]{#2}
-}
-\newcommand{\imgh}[2]
-{
-    \includegraphics[height=#1\textwidth ]{#2}
-}
+\newcommand{\imgw}[2] { \includegraphics[width=#1\textwidth]{#2}   }
+\newcommand{\pdfw}[2] { \includegraphics[width=#1\textwidth,angle=-90]{#2}   }
+\newcommand{\imgh}[2] { \includegraphics[height=#1\textwidth]{#2} }
+\newcommand{\pdfh}[2] { \includegraphics[height=#1\textwidth,angle=-90]{#2} }
 
 \newcommand{\twoImgs}[2]
 {
 	\begin{tabular}{cc}
-		\includegraphics[width=0.5\textwidth]{#1} &
-		\includegraphics[width=0.5\textwidth]{#2}
+        \imgw{0.5}{#1} &
+        \imgw{0.5}{#2}
 	\end{tabular}
 }
 \newcommand{\twoImgsWithCaptions}[4]
 {
     \begin{tabular}{cc}
-        \includegraphics[width=0.5\textwidth]{#1} &
-        \includegraphics[width=0.5\textwidth]{#3}\\
+        \imgw{0.5}{#1} &
+        \imgw{0.5}{#3} \\
         #2 & #4
     \end{tabular}
 }
