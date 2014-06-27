@@ -1,7 +1,47 @@
 
+%%%%%%%%%%%%%%
+%   Colors   %
+%%%%%%%%%%%%%%
+
+\definecolor{Black}{RGB}{0,0,0}
+\definecolor{Grey}{RGB}{50,50,50}
+\definecolor{LightGrey}{RGB}{130,130,130}
+\definecolor{Green}{RGB}{50,180,50}
+\definecolor{Red}{RGB}{230,0,0}
+\definecolor{Orange}{RGB}{255,130,0}
+\definecolor{Violet}{RGB}{130,0,130}
+\definecolor{KingBlue}{RGB}{0,130,240}
+\definecolor{Blue}{RGB}{50,100,240}
+\definecolor{VeryLightBlue}{RGB}{235,245,255}
+
+
+%%%%%%%%%%%%%%%%%%%%%
+%   Coloured text   %
+%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\Cgreen}[1]{\color{Green}{#1}}
+\newcommand{\Cgreenb}[1]{\textbf{\color{Green}{#1}}}
+
+\newcommand{\Cred}[1]{\color{Red}{#1}}
+\newcommand{\Credb}[1]{\textbf{\color{Red}{#1}}}
+
+\newcommand{\Corange}[1]{\color{Orange}{#1}}
+\newcommand{\Corangeb}[1]{\textbf{\color{Orange}{#1}}}
+
+\newcommand{\Cblue}[1]{\color{Blue}{#1}}
+\newcommand{\Cblueb}[1]{\textbf{\color{Blue}{#1}}}
+
+\newcommand{\Cviolet}[1]{\color{Violet}{#1}}
+\newcommand{\Cvioletb}[1]{\textbf{\color{Violet}{#1}}}
+
+\newcommand{\Ckingblue}[1]{\color{KingBlue}{#1}}
+\newcommand{\Ckingblueb}[1]{\textbf{\color{KingBlue}{#1}}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%           Macros           %%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\link}[2]{\Ckingblueb{\underline{\href{#1}{#2}}}}
 
 \newcommand{\centered}[1]
 {
@@ -59,6 +99,7 @@
 {
 	{
 		\setbeamertemplate{footline}{}
+		\setbeamertemplate{headline}{}
 		\slide
 		{
 			\titlepage
@@ -75,10 +116,11 @@
 % Images management
 %%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\imgw}[2] { \includegraphics[width=#1\textwidth]{#2}   }
-\newcommand{\pdfw}[2] { \includegraphics[width=#1\textwidth,angle=-90]{#2}   }
-\newcommand{\imgh}[2] { \includegraphics[height=#1\textwidth]{#2} }
-\newcommand{\pdfh}[2] { \includegraphics[height=#1\textwidth,angle=-90]{#2} }
+\newcommand{\blockw}[2] {\begin{minipage}{#1\textwidth}#2\end{minipage}}
+\newcommand{\imgw}[2] {\includegraphics[width=#1\textwidth]{#2}}
+\newcommand{\pdfw}[2] {\includegraphics[width=#1\textwidth,angle=-90]{#2}}
+\newcommand{\imgh}[2] {\includegraphics[height=#1\textwidth]{#2}}
+\newcommand{\pdfh}[2] {\includegraphics[height=#1\textwidth,angle=-90]{#2}}
 
 \newcommand{\twoImgs}[2]
 {
@@ -90,10 +132,38 @@
 \newcommand{\twoImgsWithCaptions}[4]
 {
     \begin{tabular}{cc}
-        \imgw{0.5}{#1} &
-        \imgw{0.5}{#3} \\
-        #2 & #4
+        #1 & #3 \\
+        \imgw{0.5}{#2} &
+        \imgw{0.5}{#4}
     \end{tabular}
+}
+
+\newcommand{\twoPlotsWithCaptions}[4]
+{
+    \hspace*{-0.08\textwidth}
+    \begin{tabular}{rl}
+        \blockw{0.55}{\centered{\large{#1}}} & 
+        \blockw{0.55}{\centered{\large{#3}}} \\
+        \pdfw{0.46}{#2} &
+        \pdfw{0.46}{#4} 
+    \end{tabular}
+}
+
+\setlength{\TPHorizModule}{\paperwidth}
+\setlength{\TPVertModule}{\paperheight}
+
+\newcommand{\noteblock}[5]
+{
+    {
+       \begin{textblock}{#1}[0,0](#2,#3)
+       {
+           \color{#4}
+           \setlength{\fboxsep}{1pt}
+           \setlength{\fboxrule}{1pt}
+           \fbox{\setlength{\fboxrule}{0.5pt}\setlength{\fboxsep}{2.5pt}\fbox{#5}}
+       }
+       \end{textblock}
+    }
 }
 
 %%%%%%%%%%%%%%%%%%%%%
@@ -109,28 +179,6 @@
         #2
     \end{minipage}
 }
-
-%%%%%%%%%%%%%%%%%%%%%
-% Coloured text
-%%%%%%%%%%%%%%%%%%%%%
-
-\newcommand{\Cgreen}[1] { {\color[rgb]{0.2,0.7,0.2}{#1}}}
-\newcommand{\Cgreenb}[1]{ \textbf{\color[rgb]{0.2,0.7,0.2}{#1}}}
-\newcommand{\Cred}[1]  { {\color[rgb]0.9,0,0{}{#1}}}
-\newcommand{\Credb}[1] { \textbf{\color[rgb]{0.9,0,0}{#1}}}
-\newcommand{\Corange}[1] { {\color[rgb]{1,0.5,0}{#1}}}
-\newcommand{\Corangeb}[1]{ \textbf{\color[rgb]{1,0.5,0}{#1}}}
-
-\newcommand{\Cblue}[1]  { {\color{blue}{#1}}        }
-\newcommand{\Cblueb}[1] { \textbf{\color{blue}{#1}} }
-
-\newcommand{\Cviolet}[1]  { {\color[rgb]{0.5,0,0.5}{#1}}        }
-\newcommand{\Cvioletb}[1] { \textbf{\color[rgb]{0.5,0,0.5}{#1}} }
-
-\newcommand{\Ckingblue}[1]  { {\color[rgb]{0,0.5,0.95}{#1}}        }
-\newcommand{\Ckingblueb}[1] { \textbf{\color[rgb]{0,0.5,0.95}{#1}} }
-
-\newcommand{\link}[2] { \Cblueb{\underline{\href{#1}{#2}}} }
 
 %%%%%%%%%%%%%%%%%%%%%
 % For backup slides

@@ -3,8 +3,29 @@
 %%%%%%%%%%   Parametrage des slides   %%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\setbeamercolor{title}{fg=Grey}
+\setbeamercolor{frametitle}{fg=Grey}
+\setbeamercolor{author}{fg=LightGrey}
+\setbeamercolor{institute}{fg=LightGrey}
+\setbeamercolor{date}{fg=LightGrey}
+\setbeamercolor{pagenumber}{fg=Grey}
+\setbeamercolor{itemize item}{fg=Blue}
+\setbeamercolor{header/footer}{fg=Black,bg=VeryLightBlue}
 
-% Background image
+% Font size
+\setbeamerfont{title}{size=\huge}
+\setbeamerfont{frametitle}{size=\huge}
+\setbeamerfont{author}{series=\bfseries}
+
+% Disable the navigation toolbar on the slides
+\beamertemplatenavigationsymbolsempty
+
+\setbeamertemplate{itemize item}{$\bullet$}
+\setbeamertemplate{sections/subsections in toc}[]
+
+%%%%%%%%%%%%%%%%%%%%
+% Background image %
+%%%%%%%%%%%%%%%%%%%%
 
 %\setbeamertemplate{background}
 %{
@@ -16,35 +37,57 @@
 %    \end{beamercolorbox}
 %}
 
-% Headline
+%%%%%%%%%%
+% Header %
+%%%%%%%%%%
 
 \setbeamertemplate{headline}
 {
-	\begin{beamercolorbox}[ht=10ex,dp=1ex,center]{section in head/foot}
-	\begin{Large}
-        %\hfill \insertsubsection \hfill
-        \hfill {\usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertsection} \hfill
-	\end{Large}
-	\end{beamercolorbox}
-}
-
-% Footline
-
-\setbeamertemplate{footline}
-{
-    \begin{beamercolorbox}[ht=10ex,dp=1ex,center]{date in head/foot}
-    \begin{tabular}{l c r}
-               {\scriptsize{\usebeamercolor[fg]{pagenumber} \insertshortdate }} 
-               & \hspace*{2cm} {\scriptsize{\usebeamercolor[fg]{pagenumber} \insertauthor    }} \hspace*{2cm} 
-      &        {\scriptsize{\usebeamercolor[fg]{pagenumber}\insertframenumber{} }}\\
-	\end{tabular}
-	\vskip0pt
+    \begin{beamercolorbox}[ht=8ex,dp=1ex,center]{header/footer}
+    {
+        \Large
+        \usebeamerfont{frametitle}
+        %\usebeamercolor[fg]{frametitle}
+        \ifx\insertsubsection\empty
+            \hfill \insertsection \hfill
+        \else
+            \hfill \insertsection : \insertsubsection \hfill
+        \fi
+    }
     \end{beamercolorbox}
 }
 
+%%%%%%%%%%
+% Footer %
+%%%%%%%%%%
 
+\setbeamertemplate{footline}
+{
+    \scriptsize 
+    \hbox{%
+        \begin{beamercolorbox}[wd=0.15\paperwidth,ht=3ex,left,leftskip=1ex]{header/footer}%
+            \vbox to2.5ex{\vfil\hbox{\insertshortdate}\vfil}%
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=0.7\paperwidth,ht=3ex,center]{header/footer}%
+            \vbox to2.5ex{\vfil\hbox{\insertauthor}\vfil}%
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=0.15\paperwidth,ht=3ex,right,rightskip=1ex]{header/footer}%
+            \vbox to2.5ex{\vfil\hbox{\insertframenumber}\vfil}%
+    \end{beamercolorbox}}%
 
-% Outline configuration between the sections
+    %\usebeamercolor[fg]{pagenumber} 
+    %\begin{beamercolorbox}[wd=\textwidth,ht=2ex,dp=1ex,left]{header/footer}   
+    %    \insertshortdate
+    %\end{beamercolorbox}\begin{beamercolorbox}[wd=\textwidth,ht=2ex,dp=1ex,center]{header/footer}   
+    %    \insertauthor
+    %\end{beamercolorbox}
+    %\insertframenumber
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Outline between the sections %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \AtBeginSection[]{
 
 	% First, ignore this slide in the counting
@@ -68,34 +111,9 @@
 	%}
 }
 
-% Disable the navigation toolbar on the slides
-\beamertemplatenavigationsymbolsempty
-
-% Ball style for list
-
-
-
-\definecolor{Grey}{RGB}{50,50,50}
-\definecolor{LightGrey}{RGB}{130,130,130}
-\definecolor{Blue}{RGB}{50,100,240}
-
-\setbeamercolor{title}{fg=Grey}
-\setbeamercolor{frametitle}{fg=Grey}
-
-\setbeamercolor{author}{fg=LightGrey}
-\setbeamercolor{institute}{fg=LightGrey}
-\setbeamercolor{date}{fg=LightGrey}
-\setbeamercolor{pagenumber}{fg=Grey}
-
-\setbeamercolor{itemize item}{fg=Blue}
-
-\setbeamerfont{title}{size=\huge}
-\setbeamerfont{frametitle}{size=\huge}
-\setbeamerfont{author}{series=\bfseries}
-
-
-\setbeamertemplate{itemize item}{$\bullet$}
-\setbeamertemplate{sections/subsections in toc}[]
+%%%%%%%%%%%%%%
+% Title page %
+%%%%%%%%%%%%%%
 
 \defbeamertemplate*{title page}{customized}[1][]
 {
