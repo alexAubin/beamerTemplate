@@ -6,7 +6,9 @@ Easy slide-making using LaTeX Beamer
 Dependencies
 ------------
 
-This require the xelatex command installed along with the Gillium Sans font
+This require the xelatex command installed along with the Gillium Sans font :
+
+    apt-get install texlive-xetex texlive-fonts-recommended ttf-adf-gillius
 
 Usage
 -----
