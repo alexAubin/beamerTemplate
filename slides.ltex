@@ -1,0 +1,64 @@
+
+============================
+Lorem ipsum dolor sit amet
+============================
+consectetur adipisicing elit
+----------------------------
+
+Author    : Richard McClintock
+Institute : Hampden-Sydney College, Virginia (Hampden College)
+Date      : November 5th, 1982 (05/11/1982)
+
+[SlideOutline]
+
+Proin ut quam eros
+==================
+
+[
+    [Img](0.4)(placeHolder) 
+    
+    
+    Nulla non fringilla diam.
+    `\bar{t}+MET = \sum \Omega_i`
+]
+
+Donec sed lobortis diam
+=======================
+
+[
+    - Cras at mauris ut tortor vestibulum fringilla vel sed metus.
+    - Nam placerat mauris at dolor imperdiet at aliquet lectus ultricies (`H_0`,`P_e`).
+    
+    [Tab](tableExample1)
+
+
+    => In aliquet facilisis condimentum :(
+    => Fusce pharetra dignissim nisl egestas pretium (facilisis a orci).
+]
+
+Nulla nec odio lacus
+====================
+
+[
+    [Img](0.5)(placeHolder) 
+
+    Cras at mauris ut tortor vestibulum fringilla vel sed metus `\ell \ell`
+    Maecenas eu placerat ante ?
+]
+
+[
+    Morbi et sem orci.
+
+    - `\ell` (e, `\mu`) qam diu etiam furor iste tuus nos eludet.
+    - Nulla non fringilla diam.
+    - `\tau` suspendisse feugiat.
+]
+
+[
+    [Tab](tableExample2)
+%    [Plot](0.7)(test.pdf)
+
+
+    - Ut vel arcu ac tortor adipiscing hendrerit vel sed massa.
+    - Duis non nulla magna.
+]

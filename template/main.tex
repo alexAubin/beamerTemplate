@@ -1,33 +1,28 @@
 % Starting beamer presentation
 \documentclass[xetex, 10pt]{beamer}
 
-% (Dunno what this line is for)
+% (Dunno what this line is for lol)
 \usepackage{etex}
 
 % Actually set the format to slides
-\mode<presentation> {
+\mode<presentation> 
+{
   \usetheme{default}
   \setbeamercovered{transparent}
 }
 
 % Img paths
-\graphicspath{{../img/}}
+\graphicspath{{../imgAndTables/}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-	\input{packages.tex}
+\input{packages.tex}
 
-	\input{macros.tex}
+\input{macros.tex}
 
-	\input{appearance.tex}
-
-	\input{../title.tex}
+\input{appearance.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{document}
+\input{slides.tex}
 
-	\input{../slides.tex}
-
-
-\end{document}

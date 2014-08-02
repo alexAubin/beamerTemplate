@@ -1,13 +1,16 @@
-MAIN = main
-
 TEX = xelatex
 
 PARSER = 2>&1 | grep "\\\.box\|\!\|^l\.\|^  " | grep -v "Overfull\|Rotate 90" 
 
-$(MAIN).pdf : *.tex $(MAIN).tex ../slides.tex ../title.tex
-	@$(TEX) -interaction=nonstopmode $(MAIN).tex $(PARSER); cp $(MAIN).pdf ../slides.pdf
+####################################################
 
-pdf : $(MAIN).pdf
+main.pdf : *.tex slides.tex ../imgAndTables/*
+	@$(TEX) -interaction=nonstopmode main.tex $(PARSER); cp main.pdf ../slides.pdf
+
+slides.tex : ../slides.ltex
+	python lighTexParser.py > slides.tex
+
+pdf : main.pdf
 
 clean :
 	rm -f *.aux *.log *.out *.dvi *.pdf
