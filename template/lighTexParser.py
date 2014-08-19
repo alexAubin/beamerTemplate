@@ -20,6 +20,10 @@ with open("../slides.ltex","r") as inputFile :
 # Apply regexes #
 #################
 
+''' Underline, bold, italic '''
+inputText = re.sub(r"_([a-zA-Z0-9\s]*)_", "\underline{\\1}",inputText)
+inputText = re.sub(r"\*(.*?)\*", r"\\textbf{\1}",inputText)
+
 ''' Title and subtitle, author, date and institue '''
 
 titleMatch     = re.search("\n===*\n(.*?)\n===*\n(.*?)\n---*\n",      inputText)
@@ -41,7 +45,7 @@ inputText = re.sub(r"\n(.*?)\n---*\n", "\n\subsection{\\1}\n",inputText)
 inputText = re.sub(r"\n\[\n","\n\slide\n{\n",inputText)
 inputText = re.sub(r"\n\]\n","\n}\n",inputText)
 
-''' Backquotes -> Math mode'''
+''' Math mode '''
 inputText = re.sub(r"`(.*?)`", "$\\1$",inputText)
 
 ''' Images, plots and tables syntax '''

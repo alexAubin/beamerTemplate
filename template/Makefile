@@ -13,5 +13,5 @@ slides.tex : ../slides.ltex
 pdf : main.pdf
 
 clean :
-	rm -f *.aux *.log *.out *.dvi *.pdf
+	rm -f *.aux *.log *.out *.dvi *.pdf slides.tex
 
