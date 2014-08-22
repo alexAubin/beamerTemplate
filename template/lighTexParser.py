@@ -21,7 +21,7 @@ with open("../slides.ltex","r") as inputFile :
 #################
 
 ''' Underline, bold, italic '''
-inputText = re.sub(r"_([a-zA-Z0-9\s]*)_", "\underline{\\1}",inputText)
+inputText = re.sub(r"__([a-zA-Z0-9\s]*)__", "\underline{\\1}",inputText)
 inputText = re.sub(r"\*(.*?)\*", r"\\textbf{\1}",inputText)
 
 ''' Title and subtitle, author, date and institue '''
@@ -47,6 +47,10 @@ inputText = re.sub(r"\n\]\n","\n}\n",inputText)
 
 ''' Math mode '''
 inputText = re.sub(r"`(.*?)`", "$\\1$",inputText)
+
+''' Centered '''
+inputText = re.sub(r"            (.*?)\n", "    \centered{\\1}\n",inputText)
+inputText = re.sub(r"            (.*?)\n", "    \centered{\\1}\n",inputText)
 
 ''' Images, plots and tables syntax '''
 inputText = re.sub(r"\[Img\]\((.*?)\)\((.*?)\)",  "\imgw{\\1}{\\2}",inputText)
