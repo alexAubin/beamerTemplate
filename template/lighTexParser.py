@@ -22,7 +22,7 @@ with open("../slides.ltex","r") as inputFile :
 
 ''' Underline, bold, italic '''
 inputText = re.sub(r"__([a-zA-Z0-9\s]*)__", "\underline{\\1}",inputText)
-inputText = re.sub(r"\*(.*?)\*", r"\\textbf{\1}",inputText)
+inputText = re.sub(r"\*\*(.*?)\*\*", r"\\textbf{\1}",inputText)
 
 ''' Title and subtitle, author, date and institue '''
 
