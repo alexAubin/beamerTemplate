@@ -22,7 +22,10 @@ with open("../slides.ltex","r") as inputFile :
 
 ''' Underline, bold, italic '''
 inputText = re.sub(r"__([a-zA-Z0-9\s]*)__", "\underline{\\1}",inputText)
-inputText = re.sub(r"\*(.*?)\*", r"\\textbf{\1}",inputText)
+inputText = re.sub(r"\*\*(.*?)\*\*", r"\\textbf{\1}",inputText)
+
+''' Math mode '''
+inputText = re.sub(r"`(.*?)`", "$\\1$",inputText)
 
 ''' Title and subtitle, author, date and institue '''
 
@@ -41,21 +44,25 @@ inputText = re.sub(r"\[SlideOutline\]\n", "\n\printOutline\n",inputText)
 inputText = re.sub(r"\n(.*?)\n===*\n", "\n\section{\\1}\n",inputText)
 inputText = re.sub(r"\n(.*?)\n---*\n", "\n\subsection{\\1}\n",inputText)
 
-''' Bracket -> Slides '''
+''' Slides delimination '''
 inputText = re.sub(r"\n\[\n","\n\slide\n{\n",inputText)
 inputText = re.sub(r"\n\]\n","\n}\n",inputText)
 
-''' Math mode '''
-inputText = re.sub(r"`(.*?)`", "$\\1$",inputText)
+''' Minipages delimination '''
+inputText = re.sub(r"\n    \]\n    \[\n",r"\n    \\end{minipage}\n    &\n    \\begin{minipage}{0.5\linewidth}\n",inputText)
+inputText = re.sub(r"\n    \[\n",r"\n    \\begin{tabular}{cc}\n    \\begin{minipage}{0.5\linewidth}\n",inputText)
+inputText = re.sub(r"\n    \]\n",r"\n    \\end{minipage}\n    \\end{tabular}\n",inputText)
 
 ''' Centered '''
 inputText = re.sub(r"            (.*?)\n", "    \centered{\\1}\n",inputText)
 inputText = re.sub(r"            (.*?)\n", "    \centered{\\1}\n",inputText)
 
-''' Images, plots and tables syntax '''
+''' Images, plots, tables and link syntax '''
 inputText = re.sub(r"\[Img\]\((.*?)\)\((.*?)\)",  "\imgw{\\1}{\\2}",inputText)
 inputText = re.sub(r"\[Plot\]\((.*?)\)\((.*?)\)", "\pdfw{\\1}{\\2}", inputText)
 inputText = re.sub(r"\[Tab\]\((.*?)\)",           "\input{../imgAndTables/\\1}",inputText)
+inputText = re.sub(r"\[Link\]\((.*?)\)\((.*?)\)",  "\link{\\1}{\\2}",inputText)
+inputText = re.sub(r"\[Annotation\]\((.*?),(.*?)\)\((.*?)\)\((.*?)\)",  r"\\noteblock{0.1}{\1}{\2}{\3}{\4}",inputText)
 
 ''' Items '''
 inputText = re.sub(r"    - (.*?)\n", "BEGINITEMIZE        \item \\1    ENDITEMIZE\n",inputText)

@@ -6,10 +6,13 @@
 \definecolor{Black}{RGB}{0,0,0}
 \definecolor{Grey}{RGB}{50,50,50}
 \definecolor{LightGrey}{RGB}{130,130,130}
-\definecolor{Green}{RGB}{50,180,50}
-\definecolor{Red}{RGB}{230,0,0}
-\definecolor{Orange}{RGB}{255,130,0}
-\definecolor{Violet}{RGB}{130,0,130}
+\definecolor{Green}{RGB}{25,160,25}
+%\definecolor{Red}{RGB}{250,0,30}
+\definecolor{Red}{RGB}{197,0,11}
+\definecolor{Orange}{RGB}{255,102,0}
+\definecolor{Yellow}{RGB}{255,149,14}
+\definecolor{Purple}{RGB}{130,0,130}
+\definecolor{DarkPurple}{RGB}{64,49,82}
 \definecolor{KingBlue}{RGB}{0,130,240}
 \definecolor{Blue}{RGB}{50,100,240}
 \definecolor{VeryLightBlue}{RGB}{235,245,255}
@@ -28,6 +31,9 @@
 \newcommand{\Corange}[1]{\color{Orange}{#1}}
 \newcommand{\Corangeb}[1]{\textbf{\color{Orange}{#1}}}
 
+\newcommand{\Cyellow}[1]{\color{Yellow}{#1}}
+\newcommand{\Cyellowb}[1]{\textbf{\color{Yellow}{#1}}}
+
 \newcommand{\Cblue}[1]{\color{Blue}{#1}}
 \newcommand{\Cblueb}[1]{\textbf{\color{Blue}{#1}}}
 
@@ -40,6 +46,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%           Macros           %%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+                    \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
 
 \newcommand{\link}[2]{\Ckingblueb{\underline{\href{#1}{#2}}}}
 
@@ -157,7 +166,7 @@
        \begin{textblock}{#1}[0,0](#2,#3)
        {
            \color{#4}
-           \setlength{\fboxsep}{1pt}
+           \setlength{\fboxsep}{0.7pt}
            \setlength{\fboxrule}{1pt}
            \fbox{\setlength{\fboxrule}{0.5pt}\setlength{\fboxsep}{2.5pt}\fbox{#5}}
        }
@@ -193,3 +202,5 @@
 	\addtocounter{n_backupslides}{-\value{framenumber}}
 	\addtocounter{framenumber}{\value{n_backupslides}}
 }
+
+

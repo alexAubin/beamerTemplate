@@ -41,6 +41,15 @@
 %%%%%%%%%%
 % Header %
 %%%%%%%%%%
+\newcommand{\topline}{%
+      \tikz[remember picture, overlay] {%
+          \draw[thick,black] (0cm,        -0.1cm)
+                          -- (\paperwidth,-0.1cm);}}
+
+\newcommand{\bottomline}{%
+      \tikz[remember picture, overlay] {%
+              \draw[thick,black] ([yshift=+0.35cm]current page.south west)
+                       -- ([yshift=+0.35cm,xshift=\paperwidth]current page.south east);}}
 
 \setbeamertemplate{headline}
 {
@@ -56,6 +65,13 @@
         \fi
     }
     \end{beamercolorbox}
+    \ifx\insertsection\empty
+    \else
+        \begin{textblock}{0.075}[0,0](0.925,0.0)
+            \includegraphics[width=1\textwidth]{cmsLogo}
+        \end{textblock}
+    \fi
+    \topline
 }
 
 %%%%%%%%%%
@@ -64,6 +80,8 @@
 
 \setbeamertemplate{footline}
 {
+    \bottomline
+
     \scriptsize 
     \hbox{%
         \begin{beamercolorbox}[wd=0.15\paperwidth,ht=3ex,left,leftskip=1ex]{header/footer}%
@@ -73,8 +91,9 @@
             \vbox to2.5ex{\vfil\hbox{\insertauthor}\vfil}%
         \end{beamercolorbox}%
         \begin{beamercolorbox}[wd=0.15\paperwidth,ht=3ex,right,rightskip=1ex]{header/footer}%
-            \vbox to2.5ex{\vfil\hbox{\insertframenumber}\vfil}%
-    \end{beamercolorbox}}%
+            \vbox to2.5ex{\vfil\hbox{\textbf{\insertframenumber}}\vfil}%
+        \end{beamercolorbox}%
+    }
 
     %\usebeamercolor[fg]{pagenumber} 
     %\begin{beamercolorbox}[wd=\textwidth,ht=2ex,dp=1ex,left]{header/footer}   
